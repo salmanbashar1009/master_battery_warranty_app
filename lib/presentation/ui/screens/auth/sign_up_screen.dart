@@ -57,25 +57,25 @@ class SignUpScreen extends StatelessWidget {
               SizedBox(
                 height: 12,
               ),
-              Align(
-                alignment: Alignment.centerRight,
-                child: Text(
-                  "Forget Password?",
-                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                      decoration: TextDecoration.underline,
-                      fontWeight: FontWeight.w500,
-                      color: red,
-                      decorationColor: red),
-                ),
+              Text("Phone*",
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyMedium!
+                      .copyWith(fontWeight: FontWeight.w500)),
+              SizedBox(
+                height: 6,
+              ),
+              TextFormField(
+                decoration: InputDecoration(hintText: "Enter phone no"),
               ),
               SizedBox(
-                height: 32,
+                height: 24.h,
               ),
               SizedBox(
                 height: 50.h,
                 width: double.infinity,
                 child: PrimaryButton(
-                  title: "Log in",
+                  title: "Next",
                   onTap: () {
                     Navigator.pushAndRemoveUntil(
                         context,
@@ -85,13 +85,13 @@ class SignUpScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 120.h,
+                height: 32.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Don't have account? ",
+                    "Already have an account? ",
                     style: Theme.of(context)
                         .textTheme
                         .bodyLarge!
@@ -101,7 +101,7 @@ class SignUpScreen extends StatelessWidget {
                     onTap: (){
                       // Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpScreen()));
                     },
-                    child: Text("Sign up",style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                    child: Text("Log in",style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                         color: red) ),
                   )
                 ],
