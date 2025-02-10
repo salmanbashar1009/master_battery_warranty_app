@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:master_battery_warranty_app/presentation/ui/screens/auth/login_screen.dart';
 import 'package:master_battery_warranty_app/presentation/ui/screens/home_screen.dart';
 import 'package:master_battery_warranty_app/presentation/ui/screens/parent_screen.dart';
 import 'package:master_battery_warranty_app/presentation/ui/utils/image_path.dart';
@@ -24,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
     await Future.delayed(const Duration(seconds: 2)).then((value) =>
         Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(builder: (contex) =>  ParentScreen()),
+            MaterialPageRoute(builder: (contex) =>  LoginScreen()),
             (_) => false));
   }
 

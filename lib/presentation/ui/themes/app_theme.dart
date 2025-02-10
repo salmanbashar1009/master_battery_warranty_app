@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:master_battery_warranty_app/presentation/ui/utils/styles.dart';
 
 
 // Don't use sp for font size in web and desktop app
@@ -45,6 +46,26 @@ class AppTheme {
           fontSize: 12.sp,
           fontWeight: FontWeight.w400,
           color: const Color(0xFF1D1F2C)
+      ),
+    ),
+    inputDecorationTheme: InputDecorationTheme(
+      hintStyle: TextStyle(
+        color: mediumGrey,
+        fontSize: 16.sp,
+        fontFamily: "Inter",
+        fontWeight: FontWeight.w400
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(8.r),
+        borderSide: BorderSide(color: ligtGrey),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(8.r),
+        borderSide: BorderSide(color: ligtGrey),
+      ),
+      errorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(8.r),
+        borderSide: BorderSide(color: red),
       ),
     )
   );
