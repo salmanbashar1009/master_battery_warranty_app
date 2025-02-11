@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:master_battery_warranty_app/presentation/ui/screens/parent_screen.dart';
 import 'package:master_battery_warranty_app/presentation/ui/utils/styles.dart';
+import 'package:master_battery_warranty_app/presentation/ui/widgets/custom_app_header.dart';
 import 'package:master_battery_warranty_app/presentation/ui/widgets/primary_button.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -16,20 +17,21 @@ class SignUpScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+             CustomAppHeader(title: "Let's Join",onTap: (){
+               Navigator.pop(context);
+             },),
+              SizedBox(height: 16.h,),
+              Text('Sign up to manage your profile, get notifications, and comment on live streams',softWrap: true,
+              maxLines: 2,
+              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                fontSize: 14
+              ),),
+
               SizedBox(
-                height: 56.h,
-              ),
-              Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    "Let's Join",
-                    style: Theme.of(context).textTheme.titleLarge,
-                  )),
-              SizedBox(
-                height: 50.h,
+                height: 32.h,
               ),
               Text(
-                "Email*",
+                "Name*",
                 style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                       fontWeight: FontWeight.w500,
                     ),
@@ -38,12 +40,12 @@ class SignUpScreen extends StatelessWidget {
                 height: 6,
               ),
               TextFormField(
-                decoration: InputDecoration(hintText: "Enter Email"),
+                decoration: InputDecoration(hintText: "Enter full name"),
               ),
               SizedBox(
                 height: 12,
               ),
-              Text("Password*",
+              Text("Email*",
                   style: Theme.of(context)
                       .textTheme
                       .bodyMedium!
@@ -52,7 +54,7 @@ class SignUpScreen extends StatelessWidget {
                 height: 6,
               ),
               TextFormField(
-                decoration: InputDecoration(hintText: "******"),
+                decoration: InputDecoration(hintText: "Enter email address"),
               ),
               SizedBox(
                 height: 12,
@@ -113,3 +115,4 @@ class SignUpScreen extends StatelessWidget {
     );
   }
 }
+
