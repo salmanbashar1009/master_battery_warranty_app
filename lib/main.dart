@@ -1,9 +1,8 @@
-// Fixed version of main.dart
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:master_battery_warranty_app/my_app.dart';
-import 'package:master_battery_warranty_app/presentation/state_managers/parent_screen_provider.dart';
+import 'package:master_battery_warranty_app/presentation/state_providers/parent_screen_provider.dart';
 import 'package:provider/provider.dart';
 
 void main() async {

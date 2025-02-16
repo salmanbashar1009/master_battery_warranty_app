@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:master_battery_warranty_app/presentation/state_managers/parent_screen_provider.dart';
+import 'package:master_battery_warranty_app/presentation/state_providers/parent_screen_provider.dart';
 import 'package:provider/provider.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
