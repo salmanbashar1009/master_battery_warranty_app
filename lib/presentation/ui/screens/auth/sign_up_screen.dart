@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:master_battery_warranty_app/application/routes/route_name.dart';
@@ -90,24 +91,31 @@ class SignUpScreen extends StatelessWidget {
                 SizedBox(
                   height: 32.h,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Already have an account? ",
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyLarge!
-                          .copyWith(fontWeight: FontWeight.w500),
+
+                Align(
+                  alignment: Alignment.center,
+                  child: RichText(
+                    text: TextSpan(
+                        children: <TextSpan>[
+                          TextSpan(text:  "Already have an account? ",
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyLarge!
+                                .copyWith(fontWeight: FontWeight.w500),),
+                          TextSpan(text: "Login",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(color: red),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = (){
+                                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("on tap detected")));
+
+                                }
+                          ),
+                        ]
                     ),
-                    GestureDetector(
-                      onTap: (){
-                         Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen()));
-                      },
-                      child: Text("Log in",style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                          color: red) ),
-                    )
-                  ],
+                  ),
                 )
               ],
             ),

@@ -34,34 +34,36 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.all(20.r),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(
-              height: 150.h,
-            ),
-            Center(
-              child: Image.asset(
-                brandLogo,
-                width: 248.w,
-                height: 126.h,
-                fit: BoxFit.contain,
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: 150.h,
               ),
-            ),
-            SizedBox(
-              height: 150.h,
-            ),
-            NutsActivityIndicator(
-              activeColor: Colors.black54,
-              inactiveColor: Colors.black26,
-              tickCount: 8,
-              relativeWidth: 0.7,
-              radius: 16,
-              startRatio: 0.4,
-              animationDuration: Duration(milliseconds: 500),
-            )
-          ],
+              Center(
+                child: Image.asset(
+                  brandLogo,
+                  width: 248.w,
+                  height: 126.h,
+                  fit: BoxFit.contain,
+                ),
+              ),
+              SizedBox(
+                height: 150.h,
+              ),
+              NutsActivityIndicator(
+                activeColor: Colors.black54,
+                inactiveColor: Colors.black26,
+                tickCount: 8,
+                relativeWidth: 0.7,
+                radius: 16.r,
+                startRatio: 0.4,
+                animationDuration: Duration(milliseconds: 500),
+              )
+            ],
+          ),
         ),
       ),
     );

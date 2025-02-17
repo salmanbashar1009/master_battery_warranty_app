@@ -1,0 +1,2 @@
+E:/AppDevelopment/Flutter Apps/master_battery_warranty_app/android/app/.cxx/RelWithDebInfo/2j232pci/armeabi-v7a/CMakeFiles/edit_cache.dir
+E:/AppDevelopment/Flutter Apps/master_battery_warranty_app/android/app/.cxx/RelWithDebInfo/2j232pci/armeabi-v7a/CMakeFiles/rebuild_cache.dir

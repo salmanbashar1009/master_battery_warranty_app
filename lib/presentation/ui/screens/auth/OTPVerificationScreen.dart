@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:master_battery_warranty_app/application/routes/route_name.dart';
 import 'package:master_battery_warranty_app/presentation/ui/utils/styles.dart';
 import 'package:master_battery_warranty_app/presentation/ui/widgets/app_bar.dart';
 import 'package:master_battery_warranty_app/presentation/ui/widgets/primary_button.dart';
@@ -42,8 +43,10 @@ class Otpverificationscreen extends StatelessWidget {
                     return true;
                   }, appContext: context,
                 ),
-                SizedBox(height: 32.h,),
-                PrimaryButton(title: "Verify", onTap: (){})
+                SizedBox(height: 24.h,),
+                PrimaryButton(title: "Verify", onTap: (){
+                  Navigator.pushNamedAndRemoveUntil(context, RouteName.setPasswordScreen, (_) => false);
+                })
             
               ],
             ),

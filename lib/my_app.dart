@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:master_battery_warranty_app/application/routes/route_name.dart';
 import 'package:master_battery_warranty_app/presentation/ui/screens/auth/OTPVerificationScreen.dart';
+import 'package:master_battery_warranty_app/presentation/ui/screens/auth/forgot_password/email_verification_screen.dart';
+import 'package:master_battery_warranty_app/presentation/ui/screens/auth/forgot_password/forgot_password_otp_screen.dart';
 import 'package:master_battery_warranty_app/presentation/ui/screens/auth/login_screen.dart';
+import 'package:master_battery_warranty_app/presentation/ui/screens/auth/set_password_screen.dart';
 import 'package:master_battery_warranty_app/presentation/ui/screens/auth/sign_up_screen.dart';
 import 'package:master_battery_warranty_app/presentation/ui/screens/parent_screen.dart';
 import 'package:master_battery_warranty_app/presentation/ui/screens/splash_screen.dart';
@@ -29,6 +32,9 @@ class _MyAppState extends State<MyApp> {
         RouteName.signUpScreen: (context) => SignUpScreen(),
         RouteName.otpVerificationScreen: (context) => Otpverificationscreen(),
         RouteName.parentScreen: (context) => ParentScreen(),
+        RouteName.setPasswordScreen: (context) => SetPasswordScreen(),
+        RouteName.emailVerificationScreen: (context) => EmailVerificationScreen(),
+        RouteName.forgotPasswordOTPScreen: (context) => ForgotPasswordOTPScreen(),
       },
     );
   }

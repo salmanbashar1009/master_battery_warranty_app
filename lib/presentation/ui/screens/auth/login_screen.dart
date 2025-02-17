@@ -1,8 +1,8 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:master_battery_warranty_app/application/routes/route_name.dart';
 import 'package:master_battery_warranty_app/presentation/ui/screens/auth/sign_up_screen.dart';
-import 'package:master_battery_warranty_app/presentation/ui/screens/parent_screen.dart';
 import 'package:master_battery_warranty_app/presentation/ui/utils/styles.dart';
 import 'package:master_battery_warranty_app/presentation/ui/widgets/primary_button.dart';
 
@@ -62,13 +62,18 @@ class LoginScreen extends StatelessWidget {
                 ),
                 Align(
                   alignment: Alignment.centerRight,
-                  child: Text(
-                    "Forget Password?",
-                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                        decoration: TextDecoration.underline,
-                        fontWeight: FontWeight.w500,
-                        color: red,
-                        decorationColor: red),
+                  child: GestureDetector(
+                    onTap: (){
+                      Navigator.pushNamed(context, RouteName.emailVerificationScreen);
+                    },
+                    child: Text(
+                      "Forget Password?",
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                          decoration: TextDecoration.underline,
+                          fontWeight: FontWeight.w500,
+                          color: red,
+                          decorationColor: red),
+                    ),
                   ),
                 ),
                 SizedBox(
@@ -88,30 +93,30 @@ class LoginScreen extends StatelessWidget {
                 SizedBox(
                   height: 120.h,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Don't have account? ",
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyLarge!
-                          .copyWith(fontWeight: FontWeight.w500),
+                Align(
+                  alignment: Alignment.center,
+                  child: RichText(
+                    text: TextSpan(
+                        children: <TextSpan>[
+                          TextSpan(text:  "Don't have account?  ",
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyLarge!
+                                .copyWith(fontWeight: FontWeight.w500),),
+                          TextSpan(text: "Sign up",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(color: red),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = (){
+                                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("on tap detected")));
+                                  Navigator.pushNamed(context, RouteName.signUpScreen);
+                                }
+                          ),
+                        ]
                     ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => SignUpScreen()));
-                      },
-                      child: Text("Sign up",
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyLarge!
-                              .copyWith(color: red)),
-                    )
-                  ],
+                  ),
                 )
               ],
             ),
